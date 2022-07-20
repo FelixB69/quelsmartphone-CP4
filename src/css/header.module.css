@@ -1,0 +1,28 @@
+.nav {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 20px;
+  height: 80px;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 35px;
+  margin: 0 10px;
+}
+.menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: ;
+}
+
+.item {
+  margin: 0 40px;
+  font-style: normal;
+  font-size: 23px;
+  font-weight: 600;
+}
