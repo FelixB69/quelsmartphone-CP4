@@ -1,0 +1,36 @@
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.title {
+  margin: 80px 0 50px 0;
+  font-weight: 800;
+  font-size: 55px;
+  color: white;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px 400px;
+}
+
+input,
+select,
+option,
+button,
+textarea {
+  background-color: white;
+}
+
+button {
+  width: 100px;
+}
+
+.base {
+  display: flex;
+  justify-content: space-between;
+}

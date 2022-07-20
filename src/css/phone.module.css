@@ -1,0 +1,12 @@
+.container {
+  margin: 40px auto;
+}
+
+.img {
+  max-height: 450px;
+}
+
+.name {
+  color: white;
+  text-align: center;
+}
