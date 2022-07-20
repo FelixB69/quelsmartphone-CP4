@@ -3,26 +3,41 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 5px 20px;
-  height: 80px;
+  height: 100px;
+  width: 100%;
+}
+.item:hover {
+  color: #008f8f;
+  font-size: 23px;
+  transition: 0.5s;
+}
+
+.navLink {
+  text-decoration: none;
+  color: white;
 }
 
 .title {
   font-style: normal;
   font-weight: 800;
   font-size: 35px;
-  margin: 0 10px;
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
 }
 .menu {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: ;
 }
 
 .item {
-  margin: 0 40px;
   font-style: normal;
+  margin-right: 80px;
   font-size: 23px;
   font-weight: 600;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
