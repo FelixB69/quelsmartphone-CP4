@@ -4,6 +4,7 @@
 
 .img {
   max-height: 450px;
+  cursor: pointer;
 }
 
 .name {

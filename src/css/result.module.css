@@ -14,8 +14,9 @@
 form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: 10px 400px;
+  margin-right: 25%;
+  margin-left: 25%;
+  margin-bottom: 100px;
 }
 
 input,
@@ -28,9 +29,42 @@ textarea {
 
 button {
   width: 100px;
+  height: 30px;
+  margin: 20px 0;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #008f8f;
+  color: white;
+}
+
+input {
+  border-radius: 10px;
+  height: 30px;
+  width: 170px;
+}
+
+select {
+  border-radius: 10px;
+  height: 35px;
+  font-size: 15px;
+  font-weight: 600;
+  width: 140px;
+}
+
+textarea {
+  margin: 10px 0;
+  border-radius: 10px;
+  height: 50px;
 }
 
 .base {
   display: flex;
   justify-content: space-between;
+  margin: 10px 0;
 }
