@@ -1,12 +1,13 @@
 import React from "react";
 import styles from "../css/concept.module.css";
+import gif from "../images/smart.gif";
 
 function Concept() {
   return (
-    <>
+    <div className={styles.container}>
       <div className={styles.title}>
         Simplifiez vos recherches de smartphone pour optimiser votre temps à
-        picoller
+        picoller 🥂
       </div>
       <div className={styles.bullet}>
         1. Bénéficiez d’une intelligence artificielle qui adapte ses résultats à
@@ -20,7 +21,10 @@ function Concept() {
         3. Soyez fiers d’avoir toujours le DERNIER smartphone et narguez vos
         amis
       </div>
-    </>
+      <div className={styles.gif}>
+        <img alt="gif" src={gif}></img>
+      </div>
+    </div>
   );
 }
 

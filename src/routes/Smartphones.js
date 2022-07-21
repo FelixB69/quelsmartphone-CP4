@@ -3,6 +3,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Phone from "../components/Phone";
 import styles from "../css/result.module.css";
+import { useSearchParams } from "react-router-dom";
+
+function toObject(searchParams) {
+  const res = {};
+  searchParams.forEach((value, key) => (res[key] = value));
+  return res;
+}
 
 function Smartphones() {
   const [form, setForm] = useState({
@@ -20,10 +27,11 @@ function Smartphones() {
   });
 
   const [result, setResult] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/phone")
+      .get(`http://localhost:5000/phone?${searchParams}`)
       .then((res) => res.data)
       .then((data) => {
         setResult(data);
@@ -31,7 +39,7 @@ function Smartphones() {
       .catch(() => {
         alert("No search results");
       });
-  }, []);
+  }, [searchParams]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -68,10 +76,31 @@ function Smartphones() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.title}>Choisissez votre smartphone</div>
+      <div className={styles.head}>
+        <div className={styles.title}>Choisissez votre smartphone</div>
+        <select
+          value={searchParams.get("marque") || ""}
+          onChange={(e) =>
+            setSearchParams({
+              ...toObject(searchParams),
+              marque: e.target.value,
+            })
+          }
+          className={styles.select}
+        >
+          <option key={""} value={""}>
+            All
+          </option>
+          {["Samsung", "Apple", "Huawei"].map((marque) => (
+            <option key={marque} value={marque}>
+              {marque}
+            </option>
+          ))}
+        </select>
+      </div>
       <div className={styles.list}>
         {result.map((phone) => (
-          <Phone phone={phone} />
+          <Phone key={phone.id} phone={phone} />
         ))}
       </div>
       <div className={styles.title}>

@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styles from "../css/modele.module.css";
 import trash from "../images/x-button.png";
+import arrow from "../images/left-arrow.png";
+import pen from "../images/pen.png";
 
 function Modele({ phone }) {
   const navigate = useNavigate();
@@ -28,7 +30,7 @@ function Modele({ phone }) {
       .finally(location.reload());
   };
 
-  const deleteComment = () => {
+  const deletePhone = () => {
     axios
       .delete(`http://localhost:5000/phone/${id}`)
       .then(() =>
@@ -41,6 +43,18 @@ function Modele({ phone }) {
 
   return (
     <>
+      <img
+        src={arrow}
+        alt="back"
+        width={50}
+        height={50}
+        onClick={() =>
+          navigate("/smartphones", {
+            replace: true,
+          })
+        }
+        className={styles.arrow}
+      ></img>
       <div className={styles.head}>
         <div className={styles.name}>{phoneById.nom}</div>
         <img
@@ -48,7 +62,7 @@ function Modele({ phone }) {
           alt="suppr"
           width={30}
           height={30}
-          onClick={deleteComment}
+          onClick={deletePhone}
         ></img>
       </div>
       <div className={styles.container}>
@@ -62,11 +76,18 @@ function Modele({ phone }) {
           <div className={styles.items}>
             Indice de réparabilité : {phoneById.indice}
           </div>
-
-          <div className={styles.items}>
-            Commentaire : {phoneById.commentaire}
+          <div className={styles.comments}>
+            <div className={styles.items}>
+              Commentaire : {phoneById.commentaire}{" "}
+            </div>
+            <img
+              width={35}
+              height={35}
+              src={pen}
+              alt="pen"
+              onClick={() => setComment(!comment)}
+            ></img>
           </div>
-
           {comment && (
             <>
               <textarea
@@ -78,12 +99,6 @@ function Modele({ phone }) {
               </button>
             </>
           )}
-          <button
-            className={styles.button}
-            onClick={() => setComment(!comment)}
-          >
-            Modifier le commentaire
-          </button>
         </div>
       </div>
     </>

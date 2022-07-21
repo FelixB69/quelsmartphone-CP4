@@ -1,13 +1,28 @@
+.container {
+  padding: 0 15%;
+}
+
 .title {
   font-weight: 800;
   font-size: 45px;
   text-align: center;
-  padding: 100px 0;
+  padding: 50px 0 50px 0;
 }
 
 .bullet {
   font-weight: 400;
-  font-size: 40px;
-  line-height: 80px;
+  font-size: 32px;
+  line-height: 70px;
   text-align: center;
+}
+
+.gif {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0 10px 0;
+}
+
+.gif img {
+  border-radius: 5px;
+  width: 40%;
 }

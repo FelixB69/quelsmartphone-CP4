@@ -68,3 +68,19 @@ textarea {
   justify-content: space-between;
   margin: 10px 0;
 }
+
+.head {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.select {
+  margin: 10px auto 50px auto;
+  width: 150px;
+  height: 45px;
+  text-align: center;
+  font-size: 23px;
+  border-radius: 15px;
+}

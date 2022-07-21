@@ -50,6 +50,67 @@ body {
 
 .head img {
   padding-top: 70px;
-  margin-left: 20px;
+  margin-left: 30px;
   margin-top: 20px;
+}
+
+.arrow {
+  position: absolute;
+  top: 130px;
+  left: 450px;
+  cursor: pointer;
+}
+
+.comments {
+  display: flex;
+  justify-content: space-between;
+}
+.comments img {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .name {
+    font-size: 30px;
+    padding-top: 80px;
+  }
+
+  .caracs {
+    margin-bottom: 50px;
+  }
+
+  .caracte {
+    margin: 20px 0;
+    text-align: left;
+    font-size: 25px;
+  }
+  .items {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .head img {
+    padding-top: 85px;
+    margin-left: 15px;
+    margin-top: 0;
+  }
+  .button {
+    margin: 40px 0;
+  }
+
+  .arrow {
+    top: 130px;
+    left: 20px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+  }
 }
